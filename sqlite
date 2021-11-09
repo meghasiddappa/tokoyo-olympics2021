@@ -1,0 +1,38 @@
+create table Athletes(
+Name varchar(30),
+NOC varchar(30),
+Discipline varchar(30)
+);
+
+create table Coaches(
+Name varchar(30),
+NOC varchar(30),
+Discipline varchar(30),
+Event varchar(30)
+);
+
+create table EntriesGender(
+Discipline	varchar(30),
+Female int,
+Male int,
+Total int
+);
+
+create table Medals(
+TRank	int,
+NOC varchar(30),
+Gold int,
+Silver int,
+Bronze int,
+Total int,
+Trank_by_Total int
+);
+
+create table Teams(
+Name varchar(30),
+Discipline varchar(30),
+NOC varchar(30),
+Event varchar(30)
+);
+select * from Medals m ;
+select * from Teams t ;
