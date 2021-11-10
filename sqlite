@@ -36,3 +36,13 @@ Event varchar(30)
 );
 select * from Medals m ;
 select * from Teams t ;
+
+--number of athlets participated in tokyo olympic 2021
+select distinct count(a.Name )
+from Athletes a ;
+
+
+--athletes who won gold
+SELECT a.Name 
+from Athletes a ,Medals m 
+where a.NOC = m."Team/NOC"; 
