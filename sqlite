@@ -45,4 +45,22 @@ from Athletes a ;
 --athletes who won gold
 SELECT a.Name 
 from Athletes a ,Medals m 
-where a.NOC = m."Team/NOC"; 
+ 
+
+select * from Athletes a ;
+
+CREATE view combine as
+select *
+from Athletes a,EntriesGender eg ,Coaches c ,Medals m ,Teams t 
+where a.Discipline = eg.Discipline AND eg.Discipline = t.Discipline and t.Discipline =c.Discipline and c.NOC = m."Team/NOC" ;
+
+select * from combine ;
+
+drop view combine ;
+
+select * from Athletes a ;
+
+CREATE view combine as
+select *
+from Athletes a,EntriesGender eg ,Coaches c ,Medals m ,Teams t 
+where a.Discipline = eg.Discipline AND eg.Discipline = t.Discipline and t.Discipline =c.Discipline and c.NOC = m."Team/NOC" ;
