@@ -41,26 +41,32 @@ select * from Teams t ;
 select distinct count(a.Name )
 from Athletes a ;
 
+--percentage of female athlets and male athletes using CAST
+select eg.*, CAST ((eg.Female) as float) / CAST ((eg.Total) as float)*100 as fpercent,CAST ((eg.Male) as float) / CAST ((eg.Total) as float)*100 as mpercent
+from EntriesGender eg;
 
---athletes who won gold
-SELECT a.Name 
-from Athletes a ,Medals m 
- 
+--discipline where womens were more compared to men
+SELECT eg.Discipline 
+from EntriesGender eg 
+where eg.Female > eg.Male;
 
-select * from Athletes a ;
+--discipline where mens were more compared to women
+SELECT eg.Discipline 
+from EntriesGender eg 
+where eg.Female < eg.Male;
 
-CREATE view combine as
-select *
-from Athletes a,EntriesGender eg ,Coaches c ,Medals m ,Teams t 
-where a.Discipline = eg.Discipline AND eg.Discipline = t.Discipline and t.Discipline =c.Discipline and c.NOC = m."Team/NOC" ;
+--Top 10 countries where having more athletes
+SELECT count(a.Name),a.NOC 
+from Athletes a 
+group by a.NOC 
+order by a.Name DESC ;
 
-select * from combine ;
+--countries where athletes are participated  
+select DISTINCT(a.NOC )from Athletes a ;
 
-drop view combine ;
 
-select * from Athletes a ;
+SELECT * from Athletes a 
 
-CREATE view combine as
-select *
-from Athletes a,EntriesGender eg ,Coaches c ,Medals m ,Teams t 
-where a.Discipline = eg.Discipline AND eg.Discipline = t.Discipline and t.Discipline =c.Discipline and c.NOC = m."Team/NOC" ;
+select DISTINCT(t.NOC )from Teams t ;
+
+SELECT * from Teams t 
