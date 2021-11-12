@@ -65,6 +65,28 @@ order by a.Name DESC ;
 select DISTINCT(a.NOC )from Athletes a ;
 
 
+--number of athletes participated in perticular discipline
+select COUNT(a.Name), a.Discipline 
+from Athletes a 
+group by a.Discipline
+;
+
+--Top discipline where athletes participated MORE 
+select COUNT(a.Name), a.Discipline 
+from Athletes a 
+group by a.Discipline
+order by COUNT(a.Name) DESC ;
+
+--
+SELECT *
+from Teams t
+inner join Medals m on m."Team/NOC" = t.NOC 
+INNER join Athletes a on a.NOC =t.NOC and a.Discipline =t.Discipline ;
+
+
+
+SELECT * from Teams t 
+
 SELECT * from Athletes a 
 
 select DISTINCT(t.NOC )from Teams t ;
