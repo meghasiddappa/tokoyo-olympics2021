@@ -34,8 +34,7 @@ Discipline varchar(30),
 NOC varchar(30),
 Event varchar(30)
 );
-select * from Medals m ;
-select * from Teams t ;
+
 
 --number of athlets participated in tokyo olympic 2021
 select distinct count(a.Name )
