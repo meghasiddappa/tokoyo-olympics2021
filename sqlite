@@ -77,13 +77,21 @@ from Athletes a
 group by a.Discipline
 order by COUNT(a.Name) DESC ;
 
+-- countries which has many coaches
+SELECT COUNT(c.Name), c.NOC 
+from Coaches c 
+group by c.NOC 
+order by COUNT(c.Name) DESC ;
+
+--coaches count according to discipline
+SELECT COUNT(c.Name), c.Discipline 
+from Coaches c 
+group by c.Discipline
+order by COUNT(c.Name) DESC ;
+
 --
-SELECT *
-from Teams t
-inner join Medals m on m."Team/NOC" = t.NOC 
-INNER join Athletes a on a.NOC =t.NOC and a.Discipline =t.Discipline ;
 
-
+SELECT *from Coaches c 
 
 SELECT * from Teams t 
 
