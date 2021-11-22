@@ -100,7 +100,7 @@ order by m.Gold DESC ;
 
 
 
-SELECT *from Coaches c 
+SELECT * from Coaches c 
 
 SELECT * from Teams t 
 
