@@ -84,16 +84,15 @@ order by COUNT(c.Name) DESC ;
 
 --coaches count according to discipline
 SELECT COUNT(c.Name), c.Discipline 
-from Coaches c 
+ from Coaches c 
 group by c.Discipline
 order by COUNT(c.Name) DESC ;
 
 --number of gold winner 
 SELECT m.Gold, m."Team/NOC" 
 from Medals m 
-group by m."Team/NOC" 
+group by m."Team/NOC"  
 order by m.Gold DESC ;
-
 
 --
 
